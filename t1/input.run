@@ -1,0 +1,24 @@
+T         Cs        steps     restart   freq      Pglob     Ptran     Prota     Ptgrw
+293.15     0.150    60E6         1      10000      .1        .05       .05       .75 
+t_bcr     deltas    1/2/3               ntrials 
+1.12      0.015       0.6       0.6      10       
+corefile              tailfile              
+core_data.reg.150mM tail_data.mod4.200mM    
+gen seed? seed
+T	  1  
+gen twist? DNA_twist(phi_o)
+T	   0.0033
+Magnesium flag
+0
+Non-parental LH
+1
+ProbLH  deltaLH
+.05 0.6
+pre(Ev LH/lDNA)
+1
+[LH]  mode  LHnum
+1     0     47
+Verbose Output
+F
+Sim Annealing (0=none,1=linear anneal,2=trill)
+0 0 0 
