@@ -1,0 +1,7 @@
+#num of cores
+2
+# beads LH-domains: N-term Glob-head C-term
+0 6 22
+# linker dna beads per core (1 line per core)
+4
+4
