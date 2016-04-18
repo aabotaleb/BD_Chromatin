@@ -1,0 +1,77 @@
+Essential files:
+1- main.f 
+   reading "t1\dim.in" ;Calculate major vars for allocation;Then call init.f
+2- init.f
+   Calling of Brownian Dynamics different procedures is done here.
+   Reading the following files "t1\input.run",'t1\LH_N0G6C22.in' and 't1\LH_N0G6C22_equil.in'
+3-startconf
+   reading the coordinate file data[1.dat or 10.dat]
+   [ 1.dat contains position and a, b, c of nucleosome cores and linkers]
+   {it may be replaced with geteuler.f )
+
+4- update_mod.f
+   calculates the Euler angles, alpha, beta, gamma, and
+   alpha_p, beta_p, gamma_p, anda_dna, b_dna, c_dna 
+   for the chromatin model
+5- LHboundsub.f90
+   distributes the LHs in nucleosmes 
+   for given concentration or specific input distribution
+   !!! Outputs
+!!! 
+     - LHbound : List of LHs (bound=1,unbound=0)
+!!!  
+     - LHboundbds : List of LH beads (bound=1,unbound=0)
+
+   depending on  
+   modeLHc !!! Mode for the LH concentration algorithm
+   modeLHc: distribution mode (random or input) "specified in input.run"
+   either : 
+   put sepcific distribution 
+   or
+   reads  linker histone distribution from "LHbound.0.in"
+   or
+   writes random distribution at "LHbound.0.out"
+   LHconc  !!! Concentration of LHs/nucleosome
+  
+   is given in input.run 
+   LHconc=1,modeLHc=0,LHnum=47
+
+6-gfat
+   Claculates analytically all the forces and torques + calls the gradient test function testgh
+
+7-testgh.f
+   testing the gradient of the potential [which needs potential.f]
+
+8-potential.f
+   Calculating Energies.[needed by testgh.f]
+
+9-readcore
+   Read the core data. "core_data.reg.150mM"[as specified in "input.run"]   
+
+10-readtail
+   Read the tail data. "tail_data.mod4.200mM"[as specified in "input.run"]    
+
+11-modglob
+   Module that contains global parameters/variables
+
+12-mersenne
+  random numbers generator library
+
+Non essential :
+
+
+2-diffcent.f
+   Calculating Forces numerically [totally unneded if analytical is also of concern] 
+
+3-lsimpson.f
+   numerical integration.
+
+
+5-geteuler.f
+   [it is replace with startconf to calculate the euler angles]
+
+13-grids
+    reading grids file needed by regrow function in the monte carlo loop.
+
+11-global
+global rotation of end segments of oligonucleosomes needed by monte carlo 
