@@ -60,18 +60,18 @@ Essential files:
 Non essential :
 
 
-2-diffcent.f
+1-diffcent.f
    Calculating Forces numerically [totally unneded if analytical is also of concern] 
 
-3-lsimpson.f
+2-lsimpson.f
    numerical integration.
 
 
-5-geteuler.f
+3-geteuler.f
    [it is replace with startconf to calculate the euler angles]
 
-13-grids
+4-grids
     reading grids file needed by regrow function in the monte carlo loop.
 
-11-global
+5-global
 global rotation of end segments of oligonucleosomes needed by monte carlo 
